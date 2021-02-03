@@ -8,3 +8,34 @@ sudo apt install google-chrome-stable
 
 ## Gitインストール
 sudo apt-get install git
+
+## Git init
+git config --global user.name "XXXX"
+git config --global user.email "XXXX@hogehoge.com"
+
+## Cコンパイラのインストール
+sudo apt install build-essential
+
+## Ruby
+sudo apt-get install libssl-dev curl
+sudo mkdir .rbenv
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+source ~/.bashrc
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+## ruby * ruby コマンドでaptでのインストール方法が確認できる
+rbenv install 3.0.0
+rbenv global 3.0.0
+rbenv rehash
+
+## Docker　* docker コマンドでaptでのインストール方法が確認できる
+## curl -s https://get.docker.io/ubuntu/ | sudo sh
+sudo apt install docker.io
+
+#GPG
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+
+
